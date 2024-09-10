@@ -15,7 +15,7 @@ const finishedReading = readingList.filter(
 
 <BaseLayout pageTitle={pageTitle} currentPage={currentPage}>
   <div class="px-[20px] py-[20px]">
-    <p class="">Here's what I'm currently reading...</p>
+    <p class="">Here's what I'm currently reading:</p>
     <ul class="list-disc list-inside space-y-2 mb-8">
       {
         currentlyReading.map((book) => (
@@ -33,7 +33,7 @@ const finishedReading = readingList.filter(
               book.title
             )}
             {" by "}
-            {book.author} <span class="text-sm">↗</span>
+            {book.author} {book.link && <span class="text-sm">↗</span>}
           </li>
         ))
       }
@@ -62,5 +62,10 @@ const finishedReading = readingList.filter(
         ))
       }
     </ul>
+    <p class="mt-8">
+      Other book archiving place is on my are.na channel: <a
+        href="https://www.are.na/szy-her/books-shelf">✴︎ books shelf</a
+      >
+    </p>
   </div>
 </BaseLayout>

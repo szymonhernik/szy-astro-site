@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import readingList from "../data/reading-list.json";
+
+const pageTitle = "I'm Reading";
+const currentPage = "/collaborations/";
+
+const currentlyReading = readingList.filter(
+  (book) => book.status === "reading"
+);
+const finishedReading = readingList.filter(
+  (book) => book.status === "finished"
+);
+---
+
+<BaseLayout pageTitle={pageTitle} currentPage={currentPage}>
+  <div class="px-[20px] py-[20px]">
+    <p class="">
+      Other book archiving place is on my are.na channel: <a
+        href="https://www.are.na/szy-her/books-shelf">✴︎ books shelf</a
+      >
+    </p>
+  </div>
+</BaseLayout>

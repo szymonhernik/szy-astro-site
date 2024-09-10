@@ -1,20 +1,20 @@
 [
   {
-    "title": "The Pragmatic Programmer",
-    "author": "David Thomas, Andrew Hunt",
-    "link": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/",
+    "title": "At the full and change of the moon",
+    "author": "Dionne Brand",
+    "link": null,
     "status": "reading"
   },
   {
-    "title": "Clean Code",
-    "author": "Robert C. Martin",
+    "title": "Kaczki. Dwa lata na piaskach",
+    "author": "Kate Beaton",
     "link": null,
-    "status": "finished"
+    "status": "reading"
   },
   {
-    "title": "Designing Data-Intensive Applications",
-    "author": "Martin Kleppmann",
-    "link": "https://dataintensive.net/",
+    "title": "FRONTIER",
+    "author": "Guillaume Singelin",
+    "link": "https://www.naglecomics.pl/frontier/3-225-122",
     "status": "finished"
   }
 ]
