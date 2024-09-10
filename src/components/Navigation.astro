@@ -15,29 +15,38 @@ const activeItem = navItems.find((item) => item.href === currentPage);
 const isHomePage = currentPage === "/" || currentPage === "";
 ---
 
-<div class="mt-16">
-  {
-    !isHomePage && activeItem && (
-      <a href={activeItem.href} class="block">
-        <p class="px-[10px] py-[20px] bg-white bg-opacity-70 font-bold">
-          {activeItem.label}
-        </p>
-      </a>
-    )
-  }
-  <div class:list={["divide-y-[1px] divide-black", { hidden: !isHomePage }]}>
+<div class="">
+  <div class="md:hidden">
+    {
+      !isHomePage && activeItem && (
+        <a href={activeItem.href} class="block">
+          <p class="px-[10px] py-[20px] bg-white bg-opacity-70 font-bold">
+            {activeItem.label}
+          </p>
+        </a>
+      )
+    }
+  </div>
+  <div
+    class:list={[
+      "divide-y-[1px] divide-black md:divide-none",
+      { "hidden md:block": !isHomePage },
+    ]}
+  >
     {
       navItems.map((item) =>
         item.href === null ? (
-          <p class="px-[10px] py-[20px] bg-white bg-opacity-50">&nbsp;</p>
+          <p class="px-[10px] py-[20px] bg-white bg-opacity-50 md:bg-transparent">
+            &nbsp;
+          </p>
         ) : (
           <a href={item.href} class="block">
             <p
               class:list={[
-                "px-[10px] py-[20px] bg-white hover:bg-opacity-70",
+                "px-[10px] py-[20px] bg-white hover:bg-opacity-70 ",
                 currentPage === item.href
-                  ? "bg-opacity-70 font-bold"
-                  : "bg-opacity-50",
+                  ? "bg-opacity-70 font-bold md:bg-white md:bg-opacity-40"
+                  : "bg-opacity-50 md:bg-transparent",
               ]}
             >
               {item.label}
