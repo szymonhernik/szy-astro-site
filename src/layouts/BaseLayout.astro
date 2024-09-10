@@ -17,10 +17,12 @@ const { pageTitle, currentPage } = Astro.props;
     <style></style>
   </head>
   <body>
-    <div class="content-wrapper">
+    <div class="content-wrapper mx-4 text-lg">
       <Header currentPage={currentPage} />
 
-      <slot />
+      <div class="bg-white bg-opacity-50 h-[70dvh] overflow-scroll">
+        <slot />
+      </div>
     </div>
     <div class="w-full px-4 h-12">
       <div class="w-full mt-80 h-full"></div>

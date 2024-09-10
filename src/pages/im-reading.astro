@@ -1,12 +1,66 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import readingList from "../data/reading-list.json";
 
 const pageTitle = "I'm Reading";
 const currentPage = "/im-reading/";
+
+const currentlyReading = readingList.filter(
+  (book) => book.status === "reading"
+);
+const finishedReading = readingList.filter(
+  (book) => book.status === "finished"
+);
 ---
 
 <BaseLayout pageTitle={pageTitle} currentPage={currentPage}>
-  <!-- <h1 class="text-3xl font-bold mb-4">I'm Reading</h1>
-  <p>Here's what I'm currently reading...</p> -->
-  <!-- Add your content here -->
+  <div class="px-[20px] py-[20px]">
+    <p class="">Here's what I'm currently reading...</p>
+    <ul class="list-disc list-inside space-y-2 mb-8">
+      {
+        currentlyReading.map((book) => (
+          <li>
+            {book.link ? (
+              <a
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class=""
+              >
+                {book.title}
+              </a>
+            ) : (
+              book.title
+            )}
+            {" by "}
+            {book.author} <span class="text-sm">↗</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="">I've read and wish to archive:</p>
+    <ul class="list-disc list-inside space-y-2">
+      {
+        finishedReading.map((book) => (
+          <li>
+            {book.link ? (
+              <a
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class=""
+              >
+                {book.title}
+              </a>
+            ) : (
+              book.title
+            )}
+            {" by "}
+            {book.author} {book.link && <span class="text-sm">↗</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>

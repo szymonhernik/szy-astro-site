@@ -5,28 +5,46 @@ const navItems = [
   { href: "/im-reading/", label: "I'm reading" },
   { href: "/collaborations/", label: "Collaborations" },
   { href: "/photos/", label: "Photos" },
+  { href: null },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
   { href: "/tags/", label: "Tags" },
 ];
+
+const activeItem = navItems.find((item) => item.href === currentPage);
+const isHomePage = currentPage === "/" || currentPage === "";
 ---
 
-<div class="divide-y-[1px] divide-black mx-4 mt-16">
+<div class="mt-16">
   {
-    navItems.map((item) => (
-      <a href={item.href} class="block">
-        <p
-          class:list={[
-            "px-[10px] py-[20px] bg-white hover:bg-opacity-70",
-            currentPage === item.href
-              ? "bg-opacity-70 font-bold"
-              : "bg-opacity-50",
-          ]}
-        >
-          {item.label}
+    !isHomePage && activeItem && (
+      <a href={activeItem.href} class="block">
+        <p class="px-[10px] py-[20px] bg-white bg-opacity-70 font-bold">
+          {activeItem.label}
         </p>
       </a>
-    ))
+    )
   }
-  <p class="px-[10px] py-[20px] bg-white bg-opacity-50">&nbsp;</p>
+  <div class:list={["divide-y-[1px] divide-black", { hidden: !isHomePage }]}>
+    {
+      navItems.map((item) =>
+        item.href === null ? (
+          <p class="px-[10px] py-[20px] bg-white bg-opacity-50">&nbsp;</p>
+        ) : (
+          <a href={item.href} class="block">
+            <p
+              class:list={[
+                "px-[10px] py-[20px] bg-white hover:bg-opacity-70",
+                currentPage === item.href
+                  ? "bg-opacity-70 font-bold"
+                  : "bg-opacity-50",
+              ]}
+            >
+              {item.label}
+            </p>
+          </a>
+        )
+      )
+    }
+  </div>
 </div>

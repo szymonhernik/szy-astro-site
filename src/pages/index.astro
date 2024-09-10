@@ -3,8 +3,9 @@ import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "My astro site";
+const currentPage = "/";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} currentPage={currentPage}>
   <h2>BLA BLA</h2>
 </BaseLayout>

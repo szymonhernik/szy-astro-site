@@ -1,0 +1,20 @@
+[
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas, Andrew Hunt",
+    "link": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/",
+    "status": "reading"
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "link": null,
+    "status": "finished"
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "link": "https://dataintensive.net/",
+    "status": "finished"
+  }
+]
