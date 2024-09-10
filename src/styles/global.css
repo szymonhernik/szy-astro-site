@@ -67,8 +67,7 @@ h6 {
 
 @font-face {
   font-family: "Hershey";
-  src: url("./fonts/Hershey-Noailles-Futura-Simplex-Regular.woff")
-    format("woff");
+  src: url("/fonts/Hershey-Noailles-Futura-Simplex-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -104,7 +103,7 @@ body {
 body {
   max-height: 100dvh;
   overflow-y: hidden;
-  background-image: url("./src/images/balcony-bg.webp");
+  background-image: url("/src/images/balcony-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

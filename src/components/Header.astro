@@ -1,11 +1,12 @@
 ---
 import Navigation from "./Navigation.astro";
-import Hamburger from "./Hamburger.astro";
+
+const { currentPage } = Astro.props;
 ---
 
 <header>
   <nav>
-    <Hamburger />
-    <Navigation />
+    <!-- <Hamburger /> -->
+    <Navigation currentPage={currentPage} />
   </nav>
 </header>

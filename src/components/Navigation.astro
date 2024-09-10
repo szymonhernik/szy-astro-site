@@ -1,10 +1,32 @@
 ---
+const { currentPage } = Astro.props;
 
+const navItems = [
+  { href: "/im-reading/", label: "I'm reading" },
+  { href: "/collaborations/", label: "Collaborations" },
+  { href: "/photos/", label: "Photos" },
+  { href: "/about/", label: "About" },
+  { href: "/contact/", label: "Contact" },
+  { href: "/tags/", label: "Tags" },
+];
 ---
 
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/tags/">Tags</a>
+<div class="divide-y-[1px] divide-black mx-4 mt-16">
+  {
+    navItems.map((item) => (
+      <a href={item.href} class="block">
+        <p
+          class:list={[
+            "px-[10px] py-[20px] bg-white hover:bg-opacity-70",
+            currentPage === item.href
+              ? "bg-opacity-70 font-bold"
+              : "bg-opacity-50",
+          ]}
+        >
+          {item.label}
+        </p>
+      </a>
+    ))
+  }
+  <p class="px-[10px] py-[20px] bg-white bg-opacity-50">&nbsp;</p>
 </div>
