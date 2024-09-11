@@ -124,6 +124,13 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* .slot a::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 14px; 
+} */
+
 /* nav styles */
 
 .hamburger {

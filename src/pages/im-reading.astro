@@ -14,7 +14,7 @@ const finishedReading = readingList.filter(
 ---
 
 <BaseLayout pageTitle={pageTitle} currentPage={currentPage}>
-  <div class="px-[20px] py-[20px]">
+  <div class="">
     <p class="">Here's what I'm currently reading:</p>
     <ul class="list-disc list-inside space-y-2 mb-8">
       {
@@ -27,13 +27,13 @@ const finishedReading = readingList.filter(
                 rel="noopener noreferrer"
                 class=""
               >
-                {book.title}
+                {book.title} <span class="text-sm">↗</span>
               </a>
             ) : (
               book.title
             )}
             {" by "}
-            {book.author} {book.link && <span class="text-sm">↗</span>}
+            {book.author}
           </li>
         ))
       }
@@ -51,13 +51,13 @@ const finishedReading = readingList.filter(
                 rel="noopener noreferrer"
                 class=""
               >
-                {book.title}
+                {book.title} <span class="text-sm">↗</span>
               </a>
             ) : (
               book.title
             )}
             {" by "}
-            {book.author} {book.link && <span class="text-sm">↗</span>}
+            {book.author}
           </li>
         ))
       }

@@ -18,26 +18,24 @@ const { pageTitle, currentPage } = Astro.props;
   </head>
   <body class="">
     <div
-      class="content-wrapper mx-4 text-lg md:flex md:flex-row-reverse mt-16 md:max-w-screen-lg md:w-[80%] md:max-h-[800px] md:absolute md:right-[100px] md:top-0"
+      class="content-wrapper mx-4 text-lg md:flex md:flex-row-reverse mt-16 md:max-w-screen-lg md:w-[80%] md:absolute md:right-[100px] md:top-0 max-h-[70dvh] md:max-h-[800px] md:h-[70dvh] overflow-y-hidden"
     >
+      <!-- class="overflow-y-auto md:w-64 md:border-l-[#8C8C8C] md:border-l md:max-h-[800px] max-h-[70dvh] md:h-[70dvh]" -->
       <div
-        class="overflow-y-auto md:max-h-[800px] max-h-[70dvh] md:h-[70dvh] md:w-64 md:border-l-[#8C8C8C] md:border-l"
+        class={`overflow-y-auto md:w-64 md:border-l-[#8C8C8C] md:border-l md:h-full ${
+          currentPage === "/" ? "h-full" : "md:h-full"
+        }`}
       >
         <Header currentPage={currentPage} />
       </div>
+
       <div
-        class={`bg-white bg-opacity-50 h-[70dvh] md:max-h-[800px] grow overflow-y-auto ${
+        class={`slot bg-white bg-opacity-50 overflow-y-auto grow h-full min-h-[70dvh]  px-[20px] py-[20px] ${
           currentPage === "/" && "hidden md:block"
         }`}
       >
         <slot />
       </div>
-
-      <!-- <div
-        class="bg-white bg-opacity-50 h-[70dvh] md:max-h-[800px] w-full overflow-y-auto"
-      >
-        <slot />
-      </div> -->
     </div>
     <div class="w-full px-4 h-12">
       <div class="w-full mt-80 h-full"></div>

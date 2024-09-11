@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
-
+const currentPage = "/about/";
 const identity = {
   firstName: "Sarah",
   country: "Canada",
@@ -36,7 +36,7 @@ const textCase = "uppercase";
   }
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} currentPage={currentPage}>
   <h2>... and my new Astro site!</h2>
   <p>Here are a few facts about me:</p>
   <ul>

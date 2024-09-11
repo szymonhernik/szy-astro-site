@@ -9,12 +9,6 @@ const navItems = [
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
   { href: "/tags/", label: "Tags" },
-  { href: "/about/", label: "About" },
-  { href: "/contact/", label: "Contact" },
-  { href: "/tags/", label: "Tags" },
-  { href: "/about/", label: "About" },
-  { href: "/contact/", label: "Contact" },
-  { href: "/tags/", label: "Tags" },
 ];
 
 const activeItem = navItems.find((item) => item.href === currentPage);
@@ -42,17 +36,17 @@ const isHomePage = currentPage === "/" || currentPage === "";
     {
       navItems.map((item) =>
         item.href === null ? (
-          <p class="px-[10px] py-[20px] bg-white bg-opacity-50 md:bg-transparent">
+          <p class="px-[10px] py-[20px] bg-white bg-opacity-50 md:bg-transparent ">
             &nbsp;
           </p>
         ) : (
           <a href={item.href} class="block">
             <p
               class:list={[
-                "px-[10px] py-[20px] bg-white hover:bg-opacity-70 md:py-[5px]",
+                "px-[10px] py-[20px]  md:py-[5px]",
                 currentPage === item.href
-                  ? "bg-opacity-70  md:bg-white md:bg-opacity-40"
-                  : "bg-opacity-50 md:bg-transparent",
+                  ? "bg-opacity-70  md:bg-white md:bg-opacity-40 hover:bg-opacity-40"
+                  : "bg-opacity-40 md:bg-opacity-0 bg-white ",
               ]}
             >
               {item.label}
