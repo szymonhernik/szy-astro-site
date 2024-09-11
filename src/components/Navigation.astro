@@ -19,7 +19,12 @@ const isHomePage = currentPage === "/" || currentPage === "";
   <div class="md:hidden">
     {
       !isHomePage && activeItem && (
-        <a href={activeItem.href} class="block">
+      <a href={"/"} class="block text-white hover:no-underline">
+          <p class="px-[10px] py-[20px]   md:py-[5px]">
+            ← home
+          </p>
+        </a>
+        <a href={activeItem.href} class="block hover:no-underline">
           <p class="px-[10px] py-[20px] bg-white bg-opacity-70 md:py-[5px]">
             {activeItem.label}
           </p>
@@ -40,7 +45,7 @@ const isHomePage = currentPage === "/" || currentPage === "";
             &nbsp;
           </p>
         ) : (
-          <a href={item.href} class="block">
+          <a href={item.href} class={`block hover:no-underline  ${currentPage !== item.href && "md:hover:underline" }`}>
             <p
               class:list={[
                 "px-[10px] py-[20px]  md:py-[5px]",
