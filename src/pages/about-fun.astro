@@ -1,0 +1,54 @@
+---
+import Typewriter from "../components/Typewriter-fun.astro";
+---
+
+<div class="flex flex-col gap-4">
+  <div class="typewriter-container">
+    <Typewriter text="my site is under continuous construction" />
+    <Typewriter text="my site is under continuous construction" />
+    <Typewriter text="my site is under continuous construction" />
+    <Typewriter text="my site is under continuous construction" />
+  </div>
+  <div class="flex">
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="hello" backgroundColor="" />
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+  </div>
+  <div class="typewriter-container">
+    <Typewriter
+      text="drawings and illustrations from my sketchbook"
+      backgroundColor="lightsalmon"
+    />
+    <Typewriter
+      text="archive of my past projects and experiments"
+      backgroundColor="lightcyan"
+    />
+    <Typewriter
+      text="design portfolio showcasing my work"
+      backgroundColor="lightgreen"
+    />
+    <Typewriter text="about me" backgroundColor="blue" />
+  </div>
+  <div class="flex">
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="" backgroundColor="" />
+    <Typewriter typingDuration={4} text="contact me" backgroundColor="" />
+  </div>
+</div>
+
+<!-- <h1>My name is Szymon Eda Hernik</h1> -->
+
+<style>
+  .typewriter-container {
+    display: flex;
+    width: 100%;
+  }
+
+  h1 {
+    /* text-align: center; */
+  }
+</style>

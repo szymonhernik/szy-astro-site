@@ -2,20 +2,17 @@
 
 /*
   1. Use a more-intuitive box-sizing model.
+  2. Remove default margin and padding
 */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-/*
-  2. Remove default margin
-*/
-* {
   margin: 0;
+  padding: 0;
 }
+
 /*
-  Typographic tweaks!
   3. Add accessible line-height
   4. Improve text rendering
 */
@@ -23,6 +20,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
 /*
   5. Improve media defaults
 */
@@ -34,6 +32,7 @@ svg {
   display: block;
   max-width: 100%;
 }
+
 /*
   6. Remove built-in form typography styles
 */
@@ -43,6 +42,7 @@ textarea,
 select {
   font: inherit;
 }
+
 /*
   7. Avoid text overflows
 */
@@ -55,6 +55,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
 /*
   8. Create a root stacking context
 */
@@ -75,31 +76,14 @@ h6 {
 
 html {
   background-color: #f1f5f9;
-  /* font-family: sans-serif; */
+  font-family: "Hershey", sans-serif;
 }
-/* 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100vw;
-  background-image: url("./balcony-bg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  height: 100dvh;
-  max-height: 100dvh;
-  overflow-y: hidden;
-} */
 
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
+
 body {
   max-height: 100dvh;
   overflow-y: hidden;
@@ -112,24 +96,9 @@ body {
   flex-direction: column;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  /* color: black; */
-}
 a:hover {
   text-decoration: underline;
 }
-/* .slot a::after {
-  content: "↗";
-  display: inline-block;
-  margin-left: 3px;
-  font-size: 14px; 
-} */
 
 /* nav styles */
 
@@ -177,7 +146,6 @@ a:hover {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    /* margin-left: 5em; */
     display: block;
     position: static;
     width: auto;

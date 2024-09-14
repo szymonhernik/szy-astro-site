@@ -1,11 +1,61 @@
 ---
-import Navigation from "./Navigation.astro";
+const { currentPage, isMobile = false, pageTitle } = Astro.props;
 
-const { currentPage } = Astro.props;
+const navItems = [
+  { href: "/im-reading/", label: "I'm reading", icon: "BookOpenIcon" },
+  { href: "/collaborations/", label: "Collaborations", icon: "UsersIcon" },
+  { href: "/photos/", label: "Photos", icon: "CameraIcon" },
+  { href: "/about/", label: "About", icon: "UserIcon" },
+  { href: "/contact/", label: "Contact", icon: "MailIcon" },
+  { href: "/tags/", label: "Tags", icon: "TagIcon" },
+];
+
+const isHomepage = currentPage === "/";
 ---
 
-<header class="md:bg-white md:bg-opacity-50 md:p-4 md:min-h-full">
-  <nav>
-    <Navigation currentPage={currentPage} />
-  </nav>
-</header>
+{
+  isMobile && (
+    <>
+      {!isHomepage && (
+        <div class="bg-white bg-opacity-30 p-4 flex justify-between items-center">
+          <h2 class="">{pageTitle}</h2>
+          <a href="/" class="">
+            <span class="text-sm p-3 bg-stone-100 bg-opacity-20 rounded-sm">
+              ←
+            </span>
+          </a>
+        </div>
+      )}
+
+      {isHomepage && (
+        <>
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="flex items-center w-full px-4 py-4 [&:not(:last-child)]:border-b border-black text-left transition-colors "
+            >
+              {item.label}
+            </a>
+          ))}
+        </>
+      )}
+    </>
+  )
+}
+
+{
+  !isMobile && (
+    <div class="w-64 p-4 overflow-y-auto border-r border-[#8C8C8C]">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`flex items-center w-full px-4 py-1 mb-2 text-left transition-colors ${
+            currentPage === item.href ? "bg-white bg-opacity-40" : "0"
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  )
+}
