@@ -3,11 +3,15 @@ const { currentPage, isMobile = false, pageTitle } = Astro.props;
 
 const navItems = [
   { href: "/im-reading/", label: "I'm reading", icon: "BookOpenIcon" },
-  { href: "/collaborations/", label: "Collaborations", icon: "UsersIcon" },
-  { href: "/photos/", label: "Photos", icon: "CameraIcon" },
   { href: "/about/", label: "About", icon: "UserIcon" },
   { href: "/contact/", label: "Contact", icon: "MailIcon" },
-  { href: "/tags/", label: "Tags", icon: "TagIcon" },
+  {
+    href: "/collaborations/",
+    label: "🔨 Collaborations",
+    icon: "UsersIcon",
+  },
+  { href: "/photos/", label: "🔨 Photos", icon: "CameraIcon" },
+  { href: "/tags/", label: "🔨  Tags", icon: "TagIcon" },
 ];
 
 const isHomepage = currentPage === "/";

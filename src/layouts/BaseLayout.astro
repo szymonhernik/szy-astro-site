@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Typewriter from "../components/Typewriter.astro";
 import "../styles/global.css";
 import { ViewTransitions } from "astro:transitions";
 
@@ -17,6 +18,7 @@ const isHomePage = currentPage === "/";
     <title>{pageTitle}</title>
   </head>
   <body class="min-h-screen p-4">
+    <Typewriter text="my site is under continuous construction" />
     <div
       class={`text-lg w-full  max-w-4xl max-h-[800px] mx-auto bg-white bg-opacity-50 shadow-lg overflow-hidden ${isHomePage ? "h-auto md:h-[70vh]" : "h-[70vh]"}`}
     >

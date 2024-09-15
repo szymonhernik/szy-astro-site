@@ -3,11 +3,13 @@ const { text } = Astro.props;
 const typingDuration = Math.max(0.5, text.length * 0.1); // Minimum 2 seconds, or 0.1 second per character
 ---
 
-<span
-  class="typewriter"
-  data-text={text}
-  style={`--typing-duration: ${typingDuration}s;`}>{text}</span
->
+<p class="uppercase text-sm w-fit">
+  <span
+    class="typewriter"
+    data-text={text}
+    style={`--typing-duration: ${typingDuration}s;`}>{text}</span
+  >
+</p>
 
 <style>
   .typewriter {
